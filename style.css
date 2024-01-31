@@ -1,0 +1,94 @@
+/* seletor universal */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+
+    /* para que todos os elementos não passem a largura do seu elemento pai */
+    box-sizing: border-box;
+}
+
+/* para alinhar os itens ao centro da tela */
+body {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+}
+
+#calc {
+    width: 400px;
+    padding: 0.5em;
+    background-color: #c4c4c4;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+#calc h3 {
+    font-size: .8em;
+    font-weight: 300;
+    color: #666;
+}
+
+/* para que os itens apareçam da direita para esquerda */
+#operations {
+    text-align: right;
+}
+
+#previous-operations, #current-operation {
+    /* espaço previsto msm sem dígitos */
+    min-height: 1.6em;
+    /* quebra de linha para números mt grandes */
+    overflow-wrap: break-word;
+    padding: .2em;
+}
+
+#previous-operations {
+    color: #777;
+}
+
+#current-operation {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+#buttons-container {
+    display: grid;
+    /* para definir a proporção de cada uma das colunas, uma linha com 4 frações (4 colunas) */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* leve espaçamento entre cada botão */
+    gap: 3px;
+}
+
+/* botões de operação */
+#buttons-container button {
+    border: 1px solid transparent;
+    border-radius: 0%;
+    height: 4em;
+    font-size: 1.2em;
+    background-color: #dbdbdb;
+    cursor: pointer;
+}
+
+/* botões números */
+#buttons-container .number {
+    background-color: #f3f3f3;
+}
+
+#buttons-container button:hover {
+    background-color: #bababa;
+    border-color: #999;
+}
+
+/* botão de igual */
+#buttons-container #equal-btn {
+    /* para ocupar 2 espaços na linha */
+    grid-column: span 2;
+    background-color: #75a5cb;
+}
+
+#buttons-container #equal-btn:hover {
+    background-color: #4379a8;
+}
